@@ -20,6 +20,11 @@ public class OrdersController {
 
     private final OrdersService service; //Inyeccion por constructor mediante @RequiredArgsConstructor. Y, también es inyección por interfaz.
 
+    @GetMapping("/")
+    public ResponseEntity<String> get() {
+        return ResponseEntity.ok("Hello from Railway + Orders!");
+    }
+
     @PostMapping("/orders")
     public ResponseEntity<Order> createOrder(@RequestBody @Valid OrderRequest request) { //Se valida con Jakarta Validation API
 
